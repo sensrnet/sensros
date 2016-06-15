@@ -28,18 +28,6 @@ RUN  yum -y install gtkhtml2-devel cmake numpy
 # 
 RUN yum -y install opencv-2.0.0
 RUN yum -y install opencv-devel-2.0.0
-
-# Make the camera upload area
-RUN mkdir -p /var/ftp/cameras
-# RUN chgrp -R ftpguest /var/ftp/cameras
-# RUN chown -R ftpguest /var/ftp/cameras
-# RUN chmod 775 /var/ftp/cameras
-
-# Make the camera workdir area
-RUN mkdir -p /var/ftp/pub
-RUN mkdir -p /var/ftp/workdir
-# RUN chgrp -R sensr /var/ftp/workdir
-# RUN chown -R sensr /var/ftp/workdir
   
 # needed to build ruby
 ADD src/yaml-0.1.4.tar.gz /tmp/
