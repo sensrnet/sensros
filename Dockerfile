@@ -1,6 +1,9 @@
 FROM centos:5.11
 MAINTAINER adam@sensr.net
 
+# for testing
+RUN yum install -y telnet
+
 # need compiler to build ruby and some gems
 RUN yum -y groupinstall 'Development Tools'
 
@@ -33,7 +36,4 @@ RUN yum install -y libxml2-devel libxslt-devel
 
 RUN gem install --no-rdoc --no-ri bundler -v 1.1
 RUN gem install --no-rdoc --no-ri rails -v 3.2.0
-
-# for testing
-RUN yum install -y telnet
 
