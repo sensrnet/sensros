@@ -34,6 +34,6 @@ RUN yum install -y libxml2-devel libxslt-devel
 RUN gem install --no-rdoc --no-ri bundler -v 1.1
 RUN gem install --no-rdoc --no-ri rails -v 3.2.0
 
-
-
+# for testing
+RUN yum install -y telnet
 
