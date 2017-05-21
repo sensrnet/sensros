@@ -1,4 +1,4 @@
-FROM centos:5.11
+FROM centos:6.9
 MAINTAINER adam@sensr.net
 
 # for testing
