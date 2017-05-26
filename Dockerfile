@@ -1,6 +1,17 @@
 FROM centos:6.9
 MAINTAINER adam@sensr.net
 
+
+RUN yum -y --setopt=tsflags=nodocs update && \
+    yum -y --setopt=tsflags=nodocs install httpd && \
+    yum clean all
+
+# CMD ["/run-httpd.sh"]
+
+# Simple startup script to avoid some issues observed with container restart
+ADD run-httpd.sh /run-httpd.sh
+RUN chmod -v +x /run-httpd.sh
+
 # for testing
 RUN yum install -y telnet
 
