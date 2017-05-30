@@ -3,7 +3,7 @@ MAINTAINER adam@sensr.net
 
 
 RUN yum -y --setopt=tsflags=nodocs update && \
-    yum -y --setopt=tsflags=nodocs install httpd && \
+    yum -y --setopt=tsflags=nodocs install httpd httpd-devel && \
     yum clean all
 
 # for testing
@@ -41,4 +41,8 @@ RUN yum install -y libxml2-devel libxslt-devel
 
 RUN gem install --no-rdoc --no-ri bundler -v 1.1
 RUN gem install --no-rdoc --no-ri rails -v 3.2.0
+
+RUN gem install passenger --version 3.0.11 --no-rdoc --no-ri
+RUN passenger-install-apache2-module --auto
+
 
