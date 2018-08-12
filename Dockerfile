@@ -45,4 +45,7 @@ RUN gem install --no-rdoc --no-ri rails -v 3.2.0
 RUN gem install passenger --version 3.0.11 --no-rdoc --no-ri
 RUN passenger-install-apache2-module --auto
 
+# for cron
+RUN yum install -y cronie
+
 
